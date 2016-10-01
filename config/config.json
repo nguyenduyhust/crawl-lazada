@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "",
+    "database": "lazada-product",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "posgres",
+    "password": "18051994",
+    "database": "lazada-product",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "posgres",
+    "password": "18051994",
+    "database": "lazada-product",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

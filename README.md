@@ -1,3 +1,7 @@
+### Installation
+Please create database named "lazada-product"
 npm install
 
-node index.js > url.txt
+sequelize db:migrate
+
+node index.js
