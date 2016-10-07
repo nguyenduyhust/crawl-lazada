@@ -5,9 +5,11 @@ module.exports = {
     return queryInterface.createTable('products', {
       id: {
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      code: { type: Sequelize.STRING ,allowNull: false },
       title: { type: Sequelize.STRING, allowNull: true },
       brand: { type: Sequelize.STRING, allowNull: true },
       description: { type: Sequelize.TEXT, allowNull: true },

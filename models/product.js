@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var Product = sequelize.define('Product', {
-        id: { type: DataTypes.INTEGER, allowNull: false, primaryKey: true },
+        code: { type: DataTypes.STRING, allowNull: false },
         title: { type: DataTypes.STRING, allowNull: true },
         brand: { type: DataTypes.STRING, allowNull: true },
         description: { type: DataTypes.TEXT, allowNull: true },
