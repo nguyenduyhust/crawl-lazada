@@ -5,11 +5,10 @@ var cheerio = require('cheerio');
 var async = require('async');
 var _ = require('underscore');
 var crawlLink = require('./lib/crawl-link.js');
-// var extractLazada = require('./lib/extract-data-lazada.js');
 var Product = require('./models').Product;
 
-// var url = "http://www.lazada.vn/link-cac-san-pham/";
-var url = "http://www.lazada.vn";
+var url = "http://www.lazada.vn/link-cac-san-pham/";
+// var url = "http://www.lazada.vn";
 var productCodes = [];
 
 new crawlLink()
@@ -17,9 +16,9 @@ new crawlLink()
         maxConcurrentRequests: 20,
         requestNumberPerSecond: 200,
         shouldCrawl: function (url) {
-            if (url.indexOf("lazada.vn") >= 0) {
-                if ((!/\?/gmi.test(url)) || /\?page/gmi.test(url)) {
-                    if (!/\&|\;/gmi.test(url)) {
+            if (/lazada\.vn/gmi.test(url)) {
+                if ((!/\?|\=|\;|\&/gmi.test(url)) || /\?page/gmi.test(url)) {
+                    if ((/\?page/gmi.test(url) || /\.html/gmi.test(url)) && (!/\;|\&/gmi.test(url))) {
                         return true;
                     }
                 }
